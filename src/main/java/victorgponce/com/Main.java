@@ -1,17 +1,30 @@
 package victorgponce.com;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import victorgponce.com.Objects.Pokemon;
+import victorgponce.com.Pokedex.Pokedex;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+
+        List<Pokemon> pokedex = new Pokedex("src/main/resources/pokemon_base_stats.csv", 5).getAllPokemon();
+
+        for (int i = 0; i <= pokedex.toArray().length - 1; i++) {
+            System.out.print("Name: " + pokedex.get(i).getName() + ", ");
+            System.out.print("MAX HP: " + pokedex.get(i).getMaxHP() + ", ");
+            System.out.print("ATTACK: " + pokedex.get(i).getAttack() + ", ");
+            System.out.print("SP ATTACK: " + pokedex.get(i).getSpecialAttack() + ", ");
+            System.out.print("DEFENSE: " + pokedex.get(i).getDefense() + ", ");
+            System.out.print("SP DEFENSE: " + pokedex.get(i).getSpecialDefense() + ", ");
+            System.out.println("SPEED: " + pokedex.get(i).getSpeed() + ", ");
         }
+
+        kb.close();
     }
 }

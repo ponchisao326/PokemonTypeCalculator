@@ -13,5 +13,23 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
+    <repositories>
+        <!-- Repositorio Maven Central (ya viene incluido por defecto en Maven, pero puedes agregarlo explícitamente) -->
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+
+        <!-- Repositorio de Bintray (obsoleto, pero necesario si la librería no está en Maven Central) -->
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+    </dependencies>
+
 </project>
