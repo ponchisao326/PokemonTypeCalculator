@@ -2,7 +2,7 @@ package victorgponce.com.Objects;
 
 public class Move {
 
-    private int id;
+    private final int id;
     private final String name;
     private final String type;
     private final int power;

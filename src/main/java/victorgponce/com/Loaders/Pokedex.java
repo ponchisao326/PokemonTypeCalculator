@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pokedex {
-    private List<Pokemon> pokemonList;
-    private List<Move> moveList;
+    private final List<Pokemon> pokemonList;
 
     public Pokedex(String csvFilePkmn, int level) {
         pokemonList = new ArrayList<>();

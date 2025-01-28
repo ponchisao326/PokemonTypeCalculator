@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Moves {
 
-    private List<Move> moveList;
+    private final List<Move> moveList;
 
     public Moves(String csvFileMove) {
         moveList = new ArrayList<>();
