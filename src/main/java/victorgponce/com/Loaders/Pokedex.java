@@ -1,5 +1,6 @@
-package victorgponce.com.Pokedex;
+package victorgponce.com.Loaders;
 
+import victorgponce.com.Objects.Move;
 import victorgponce.com.Objects.Pokemon;
 
 import java.io.BufferedReader;
@@ -10,10 +11,12 @@ import java.util.List;
 
 public class Pokedex {
     private List<Pokemon> pokemonList;
+    private List<Move> moveList;
 
-    public Pokedex(String csvFile, int level) {
+    public Pokedex(String csvFilePkmn, int level) {
         pokemonList = new ArrayList<>();
-        loadPokemonFromCSV(csvFile, level);
+
+        loadPokemonFromCSV(csvFilePkmn, level);
     }
 
     private void loadPokemonFromCSV(String csvFile, int level) {
@@ -61,5 +64,8 @@ public class Pokedex {
         return pokemonList;
     }
 
-    // Métodos adicionales (buscar por nombre, tipo, etc.)
+    public Pokemon getPokemonById(int index) {
+        List<Pokemon> PokemonList = getAllPokemon();
+        return pokemonList.get(index);
+    }
 }

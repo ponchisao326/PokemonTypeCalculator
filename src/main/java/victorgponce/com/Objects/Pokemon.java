@@ -97,7 +97,7 @@ public class Pokemon {
     }
 
     public int getSpecialAttack() {
-        return calculateStat(BASE_ATTACK, SP_ATTACK_IV, spAttackEV, 5);
+        return calculateStat(BASE_SP_ATTACK, SP_ATTACK_IV, spAttackEV, 5);
     }
 
     public int getDefense() {
@@ -113,7 +113,7 @@ public class Pokemon {
     }
 
     private int calculateStat(int baseStat, int iv, int ev, int offset) {
-        return (int)(((2 * baseStat + iv + (ev / 4)) * level) / 100.0) + offset;
+        return (int)(((2 * baseStat + iv + ((double) ev / 4)) * level) / 100.0) + offset;
     }
 
     /* ----------------------------- */
@@ -148,6 +148,40 @@ public class Pokemon {
         validateEVs(ev, 0, 0, 0, 0, 0);
         this.hpEV = ev;
     }
+
+    public int getAttackEv() { return attackEV; }
+    public void setAttackEV(int ev) {
+        validateEVs(ev, 0, 0, 0, 0, 0);
+        this.attackEV = ev;
+    }
+
+    public int getDefenseEV() { return hpEV; }
+    public void setDefenseEV(int ev) {
+        validateEVs(ev, 0, 0, 0, 0, 0);
+        this.defenseEV = ev;
+    }
+
+    public int getSpAttackEV() { return hpEV; }
+    public void setSpAttackEV(int ev) {
+        validateEVs(ev, 0, 0, 0, 0, 0);
+        this.spAttackEV = ev;
+    }
+
+    /*
+    private int speedEV; */
+
+    public int getSpDefenseEV() { return hpEV; }
+    public void setSpDefenseEV(int ev) {
+        validateEVs(ev, 0, 0, 0, 0, 0);
+        this.spDefenseEV = ev;
+    }
+
+    public int getSpeedEV() { return hpEV; }
+    public void setSpeedEV(int ev) {
+        validateEVs(ev, 0, 0, 0, 0, 0);
+        this.speedEV = ev;
+    }
+
     // Validaciones
     private void validateIVs(int... ivs) {
         for(int iv : ivs) {
